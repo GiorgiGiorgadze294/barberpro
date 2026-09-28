@@ -1,0 +1,184 @@
+.team-section {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 1rem;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212, 175, 55, 0.06), transparent),
+    var(--bg-primary, #121212);
+}
+
+.container {
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+}
+
+.team-grid {
+  display: grid;
+  /* ბარათი არასდროს არ იქნება 200px-ზე პატარა და 300px-ზე დიდი — მედიაზე მდგრადი */
+  grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 24vw, 300px), 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ბარათი */
+.barber-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: barber-rise 0.6s ease forwards;
+}
+
+/* ერთი ორკესტრირებული გამოჩენა, თითო ბარათი ოდნავ დაგვიანებით */
+.barber-card:nth-child(1) { animation-delay: 0.05s; }
+.barber-card:nth-child(2) { animation-delay: 0.15s; }
+.barber-card:nth-child(3) { animation-delay: 0.25s; }
+.barber-card:nth-child(4) { animation-delay: 0.35s; }
+.barber-card:nth-child(n+5) { animation-delay: 0.45s; }
+
+@keyframes barber-rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.barber-card:hover {
+  border-color: var(--accent-gold, #d4af37);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* სურათის ბლოკი — პორტრეტული პროპორცია, ნებისმიერ ეკრანზე მდგრადი */
+.barber-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.barber-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(85%) contrast(1.05);
+  transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.barber-card:hover .barber-img-wrapper img {
+  filter: grayscale(0%) contrast(1.05);
+  transform: scale(1.04);
+}
+
+/* ჩამქრალი ვერტიკალური გრადიენტი სურათის ძირში, რომ ბეჯი და კონტური "ჩაჯდეს" */
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 10, 10, 0.55) 100%);
+  pointer-events: none;
+}
+
+/* ბეჯი — კუთხის სტამპი, აღარ არის pill */
+.badge-experience {
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  background: rgba(18, 18, 18, 0.85);
+  border-left: 2px solid var(--accent-gold, #d4af37);
+  color: var(--accent-gold, #d4af37);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.6rem 0.3rem 0.5rem;
+  backdrop-filter: blur(4px);
+}
+
+/* ტექსტური ნაწილი */
+.barber-info {
+  padding: 1.1rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.barber-role {
+  color: var(--accent-gold, #d4af37);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.barber-name {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.55rem 0;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* ხაზი სახელის ქვეშ, იზრდება hover-ზე */
+.barber-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--accent-gold, #d4af37);
+  transition: width 0.35s ease;
+}
+
+.barber-card:hover .barber-name::after {
+  width: 100%;
+}
+
+.barber-bio {
+  color: #a0a0a0;
+  font-size: 0.83rem;
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+  display: -webkit-box;
+  --webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  margin-top: auto;
+}
+
+/* ღილაკი */
+.btn-book {
+  width: 100%;
+  padding: 0.6rem;
+  background: transparent;
+  border: 1px solid var(--accent-gold, #d4af37);
+  color: var(--accent-gold, #d4af37);
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.btn-book:hover {
+  background: var(--accent-gold, #d4af37);
+  color: #121212;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barber-card,
+  .barber-img-wrapper img,
+  .barber-name::after,
+  .btn-book {
+    animation: none !important;
+    transition: none !important;
+  }
+  .barber-card { opacity: 1; transform: none; }
+}

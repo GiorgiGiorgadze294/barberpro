@@ -1,0 +1,19 @@
+<div class="service-card">
+  <div class="service-header">
+    <h3 class="service-title">{{ service.name }}</h3>
+    <div class="service-price-tag">
+      <span class="price">{{ service.price }} ₾</span>
+    </div>
+  </div>
+
+  <p class="service-description">{{ service.description }}</p>
+
+  <div class="service-footer">
+    <span class="duration">
+      ⏱️ {{ service.durationMinutes }} წუთი
+    </span>
+    <button class="btn-select" (click)="onBook()">
+      არჩევა & დაჯავშნა
+    </button>
+  </div>
+</div>

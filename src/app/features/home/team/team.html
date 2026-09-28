@@ -1,0 +1,29 @@
+<section id="team" class="team-section">
+  <div class="container">
+    <app-section-title 
+      subtitle="ჩვენი ოსტატები" 
+      title="გაიცანით გუნდი" 
+      [center]="true">
+    </app-section-title>
+
+    <div class="team-grid">
+      <div class="barber-card" *ngFor="let barber of barbers">
+        <div class="barber-img-wrapper">
+          <img [src]="barber.image" [alt]="barber.name" loading="lazy">
+          <div class="img-overlay"></div>
+          <div class="badge-experience">{{ barber.experienceYears }} წლიანი გამოცდილება</div>
+        </div>
+
+        <div class="barber-info">
+          <span class="barber-role">{{ barber.role }}</span>
+          <h3 class="barber-name">{{ barber.name }}</h3>
+          <p class="barber-bio">{{ barber.bio }}</p>
+
+          <div class="card-footer">
+            <button class="btn-book">ვიზიტის დაჯავშნა</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

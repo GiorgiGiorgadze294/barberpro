@@ -1,0 +1,140 @@
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-header.scrolled {
+  background-color: var(--bg-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-main {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 1px;
+}
+
+.logo-sub {
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+}
+
+/* Navigation Links */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-gold);
+}
+
+/* CTA Button */
+.btn-book-nav {
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-book-nav:hover {
+  background-color: var(--accent-gold);
+  color: var(--bg-primary);
+}
+
+/* Mobile Hamburger Button */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+}
+
+.hamburger-btn .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile Dropdown */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem;
+  gap: 1.2rem;
+}
+
+.mobile-menu a {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.btn-book-mobile {
+  text-align: center;
+  background-color: var(--accent-gold);
+  color: var(--bg-primary) !important;
+  padding: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Media Query */
+@media (max-width: 850px) {
+  .nav-menu, .btn-book-nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+}

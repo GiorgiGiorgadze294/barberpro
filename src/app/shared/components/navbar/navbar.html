@@ -1,0 +1,41 @@
+<header class="navbar-header" [class.scrolled]="isScrolled">
+  <div class="navbar-container">
+    
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <span class="logo-main">{{ businessInfo.name }}</span>
+      <span class="logo-sub">BARBERSHOP</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-menu">
+      <a href="#home" class="nav-link">მთავარი</a>
+      <a href="#services" class="nav-link">მომსახურება</a>
+      <a href="#about" class="nav-link">ჩვენ შესახებ</a>
+      <a href="#gallery" class="nav-link">გალერეა</a>
+      <a href="#reviews" class="nav-link">შეფასებები</a>
+      <a href="#contact" class="nav-link">კონტაქტი</a>
+    </nav>
+
+    <!-- Header CTA -->
+    <a href="#booking" class="btn-book-nav">დაჯავშნა</a>
+
+    <!-- Hamburger Button (Mobile) -->
+    <button class="hamburger-btn" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+      <span class="bar" [class.open]="isMobileMenuOpen"></span>
+      <span class="bar" [class.open]="isMobileMenuOpen"></span>
+      <span class="bar" [class.open]="isMobileMenuOpen"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    <a href="#home" (click)="closeMobileMenu()">მთავარი</a>
+    <a href="#services" (click)="closeMobileMenu()">მომსახურება</a>
+    <a href="#about" (click)="closeMobileMenu()">ჩვენ შესახებ</a>
+    <a href="#gallery" (click)="closeMobileMenu()">გალერეა</a>
+    <a href="#reviews" (click)="closeMobileMenu()">შეფასებები</a>
+    <a href="#contact" (click)="closeMobileMenu()">კონტაქტი</a>
+    <a href="#booking" class="btn-book-mobile" (click)="closeMobileMenu()">ვიზიტის დაჯავშნა</a>
+  </div>
+</header>

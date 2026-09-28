@@ -1,0 +1,36 @@
+<p>hero works!</p>
+<section id="home" class="hero-section">
+  <div class="hero-overlay"></div>
+  
+  <div class="hero-content">
+    <span class="hero-subtitle">{{ businessInfo.tagline }}</span>
+    <h1 class="hero-title">სტილი, რომელიც გამოგარჩევს</h1>
+    <p class="hero-description">
+      პროფესიონალური მომსახურება, თანამედროვე ტექნიკა და მამაკაცის სტილის სრული კულტურა {{ businessInfo.address }}-ზე.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">დაჯავშნე ვიზიტი</a>
+      <a href="#services" class="btn-secondary">მომსახურებები</a>
+    </div>
+
+    <div class="hero-info-bar">
+      <div class="info-item">
+        <span class="icon">📍</span>
+        <div class="info-text">
+          <small>მისამართი</small>
+          <strong>{{ businessInfo.address }}</strong>
+        </div>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-item">
+        <span class="icon">📞</span>
+        <div class="info-text">
+          <small>ტელეფონი</small>
+          <strong>{{ businessInfo.phone }}</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

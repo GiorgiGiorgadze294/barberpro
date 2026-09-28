@@ -1,0 +1,125 @@
+.banner-section {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.85)), 
+              url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  padding: 4rem 1.5rem;
+  color: #ffffff;
+}
+
+.banner-container {
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-content {
+  max-width: 650px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(201, 160, 80, 0.15);
+  color: var(--accent-gold, #c9a050);
+  border: 1px solid var(--accent-gold, #c9a050);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.15;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-title, sans-serif);
+}
+
+.gold-text {
+  color: var(--accent-gold, #c9a050);
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-muted, #bbbbbb);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.banner-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--accent-gold, #c9a050);
+  color: #121212;
+}
+
+.btn-primary:hover {
+  background-color: #d4af37;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(201, 160, 80, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Stats */
+.stats-grid {
+  display: flex;
+  gap: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.8rem;
+}
+
+.stat-item h3 {
+  font-size: 1.8rem;
+  color: var(--accent-gold, #c9a050);
+  margin-bottom: 0.2rem;
+  font-weight: 800;
+}
+
+.stat-item p {
+  font-size: 0.85rem;
+  color: var(--text-muted, #999);
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    gap: 1.2rem;
+  }
+  
+  .stat-item h3 {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,15 @@
+.services-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-primary);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}

@@ -1,0 +1,18 @@
+<section id="gallery" class="gallery-section">
+  <div class="container">
+    <app-section-title 
+      subtitle="ჩვენი ნამუშევრები" 
+      title="გალერეა" 
+      [center]="true">
+    </app-section-title>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let item of galleryImages">
+        <img [src]="item.url" [alt]="item.alt">
+        <div class="overlay">
+          <span class="icon">🔍</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

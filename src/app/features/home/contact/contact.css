@@ -1,0 +1,197 @@
+.contact-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-primary, #0d0d0d);
+  color: var(--text-primary, #ffffff);
+}
+
+.container {
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+}
+
+/* 1. Contact Cards Grid */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.contact-card {
+  background-color: var(--bg-card, #161616);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card:not(.info-only):hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-gold, #c9a050);
+  box-shadow: 0 10px 30px rgba(201, 160, 80, 0.15);
+}
+
+.icon-wrapper {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(201, 160, 80, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  color: var(--accent-gold, #c9a050);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icon-wrapper svg {
+  width: 26px;
+  height: 26px;
+}
+
+.contact-card:hover .icon-wrapper {
+  transform: scale(1.1);
+  background: var(--accent-gold, #c9a050);
+  color: #121212;
+}
+
+.contact-card h3 {
+  color: var(--text-primary, #fff);
+  margin-bottom: 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.contact-card p {
+  color: var(--text-muted, #999);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.card-action {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-gold, #c9a050);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge {
+  color: #4cd964;
+  background: rgba(76, 217, 100, 0.1);
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+}
+
+/* 2. Map & Form Grid */
+.contact-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.map-wrapper {
+  min-height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  filter: grayscale(80%) invert(90%) contrast(120%);
+  transition: filter 0.3s ease;
+}
+
+.map-wrapper:hover {
+  filter: grayscale(0%) invert(0%) contrast(100%);
+}
+
+/* Contact Form */
+.contact-form-wrapper {
+  background-color: var(--bg-card, #161616);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  padding: 2.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form-wrapper h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary, #fff);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--bg-primary, #0d0d0d);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-gold, #c9a050);
+}
+
+.submit-btn {
+  border: none;
+  padding: 0.9rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* WhatsApp Button styling */
+.whatsapp-btn {
+  background-color: #25d366;
+  color: #ffffff;
+}
+
+.whatsapp-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .contact-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-wrapper {
+    height: 350px;
+  }
+}

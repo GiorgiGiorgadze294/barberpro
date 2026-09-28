@@ -1,0 +1,17 @@
+<section id="services" class="services-section">
+  <div class="container">
+    <app-section-title 
+      subtitle="ჩვენი სერვისები" 
+      title="პრემიუმ მომსახურება & ფასები" 
+      [center]="true">
+    </app-section-title>
+
+    <div class="services-grid">
+      <app-service-card 
+        *ngFor="let service of services" 
+        [service]="service"
+        (selectService)="onServiceSelect(service)">
+      </app-service-card>
+    </div>
+  </div>
+</section>

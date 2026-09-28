@@ -1,0 +1,103 @@
+<section id="contact" class="contact-section">
+  <div class="container">
+    <app-section-title 
+      subtitle="საკონტაქტო ინფორმაცია" 
+      title="გვეწვიეთ ან დაგვიკავშირდით" 
+      [center]="true">
+    </app-section-title>
+
+    <!-- 1. საკონტაქტო ბარათები -->
+    <div class="contact-cards">
+      <!-- მისამართი -->
+      <a [href]="info.mapsUrl" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <div class="icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h3>მისამართი</h3>
+        <p>{{ info.address }}</p>
+        <span class="card-action">რუკაზე ნახვა ↗</span>
+      </a>
+
+      <!-- ტელეფონი -->
+      <a [href]="'tel:' + info.phone" class="contact-card">
+        <div class="icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </div>
+        <h3>ტელეფონი</h3>
+        <p>{{ info.phone }}</p>
+        <span class="card-action">დარეკვა 📞</span>
+      </a>
+
+      <!-- სამუშაო საათები -->
+      <div class="contact-card info-only">
+        <div class="icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h3>სამუშაო საათები</h3>
+        <p>{{ info.workingHours }}</p>
+        <span class="card-action status-badge">ღიაა 21:00-მდე</span>
+      </div>
+    </div>
+
+    <!-- 2. Google Map & WhatsApp Form Grid -->
+    <div class="contact-content-grid">
+      
+      <!-- Google Map Iframe -->
+      <div class="map-wrapper">
+        <iframe 
+          [src]="safeMapUrl" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <!-- Quick Message Form for WhatsApp -->
+      <div class="contact-form-wrapper">
+        <h3>მოგვწერეთ WhatsApp-ზე 💬</h3>
+        <form (ngSubmit)="sendMessage()" class="contact-form">
+          <div class="form-group">
+            <input 
+              type="text" 
+              name="name"
+              [(ngModel)]="formData.name" 
+              placeholder="თქვენი სახელი *" 
+              required>
+          </div>
+          <div class="form-group">
+            <input 
+              type="tel" 
+              name="phone"
+              [(ngModel)]="formData.phone" 
+              placeholder="ტელეფონის ნომერი *" 
+              required>
+          </div>
+          <div class="form-group">
+            <textarea 
+              name="message"
+              [(ngModel)]="formData.message" 
+              rows="4" 
+              placeholder="შეტყობინება ან კითხვა...">
+            </textarea>
+          </div>
+          <button type="submit" class="submit-btn whatsapp-btn">
+            <span>გაგზავნა WhatsApp-ზე</span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99 0-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

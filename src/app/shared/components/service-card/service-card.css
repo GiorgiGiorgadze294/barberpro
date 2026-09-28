@@ -1,0 +1,83 @@
+.service-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 10px 30px rgba(198, 164, 108, 0.1);
+  background-color: var(--bg-card-hover);
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.service-price-tag {
+  background-color: rgba(198, 164, 108, 0.1);
+  border: 1px solid var(--accent-gold);
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.price {
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.service-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.service-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.duration {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.btn-select {
+  background-color: transparent;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.btn-select:hover {
+  background-color: var(--accent-gold);
+  color: var(--bg-primary);
+}

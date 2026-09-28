@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="container header-container">
+    <a href="#" class="logo">BARBER<span>PRO</span></a>
+
+    <button class="burger-btn" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-menu" [class.active]="isMenuOpen">
+      <a (click)="scrollTo('hero')">მთავარი</a>
+      <a (click)="scrollTo('services')">სერვისები</a>
+      <a (click)="scrollTo('about')">ჩვენ შესახებ</a>
+      <a (click)="scrollTo('team')">გუნდი</a>
+      <a (click)="scrollTo('gallery')">გალერეა</a>
+      <a (click)="scrollTo('contact')">კონტაქტი</a>
+      <button class="btn-book" (click)="scrollTo('booking')">დაჯავშნა</button>
+    </nav>
+  </div>
+</header>
